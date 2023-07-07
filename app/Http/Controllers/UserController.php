@@ -35,7 +35,9 @@ class UserController extends Controller
      */
     public function store(UserStore $request)
     {
-        //
+        $input = $request->validated();
+        User::create('$input');
+        return redirect()->back()->withSuccess('User Created succesfully');
     }
 
     /**
